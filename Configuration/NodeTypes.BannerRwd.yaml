@@ -1,4 +1,6 @@
 'DevHero.BannerRwd:BannerRwd':
+  superTypes:
+    - 'Neos.Neos:Content'
   childNodes:
     main:
       type: 'Neos.Neos:ContentCollection'
