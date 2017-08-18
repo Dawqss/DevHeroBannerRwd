@@ -1,5 +1,5 @@
 prototype(DevHero.BannerRwd:BannerRwd) {
-    templatePath = 'resource://DevHero.BannerRwd/Private/Templates/News/Video.html'
+    templatePath = 'resource://DevHero.BannerRwd/Private/Templates/BannerRwd.html'
 
     rwdFeature = Neos.Fusion:Case {
         set {
