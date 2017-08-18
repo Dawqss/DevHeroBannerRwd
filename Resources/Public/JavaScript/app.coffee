@@ -1,5 +1,4 @@
 APP = undefined
-lastScrollTop = undefined
 APP = {}
 
 APP.rwdBackground = ->
