@@ -16,6 +16,10 @@
     position: 1
     inspector:
       tabs:
+        notRwd:
+          label: Niersponsywny Obraz
+          icon: 'icon-image'
+          position: 1
         rwd:
           label: RWD
           icon: 'icon-image'
@@ -32,15 +36,7 @@
         label: Foto
         reloadIfChanged: true
         inspector:
-          group: banner
-          position: 2
-    imageAltBanner:
-      type: string
-      ui:
-        label: Alt tag do SEO
-        inspector:
-          group: banner
-          position: 3
+          group: notRwd
     turnOnRwd:
       type: boolean
       ui:
