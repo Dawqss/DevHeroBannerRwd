@@ -1,0 +1,16 @@
+<div class="banner" style="min-height: 500px;">
+    <div <f:if condition="{turnOnRwd}">
+        <f:then>
+            class="news__banner js-rwd-bg"
+        </f:then>
+        <f:else>
+            class="news__banner"
+        </f:else>
+    </f:if>
+    style="background: url({media:uri.image(image:imageBanner)})"
+    sizes="{rwdFeature->f:format.json()}">
+        <div class="banner__content">
+            {content->f:format.raw()}
+        </div>
+    </div>
+</div>

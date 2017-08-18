@@ -1,0 +1,31 @@
+prototype(DevHero.BannerRwd:BannerRwd) {
+    templatePath = 'resource://DevHero.BannerRwd/Private/Templates/News/Video.html'
+
+    rwdFeature = Neos.Fusion:Case {
+        set {
+            condition = ${q(node).property('turnOnRwd')}
+            renderer = Neos.Fusion:RawArray {
+                xs = Neos.Neos:ImageUri {
+                    asset = ${q(node).property('imageXS')}
+                }
+                s = Neos.Neos:ImageUri {
+                    asset = ${q(node).property('imageS')}
+                }
+                m = Neos.Neos:ImageUri {
+                    asset = ${q(node).property('imageM')}
+                }
+                l = Neos.Neos:ImageUri {
+                    asset = ${q(node).property('imageL')}
+                }
+            }
+        }
+        notset {
+            condition = ${true}
+            renderer = ${false}
+        }
+    }
+
+    content = ContentCollection {
+        nodePath = 'main'
+    }
+}

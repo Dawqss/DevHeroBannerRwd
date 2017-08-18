@@ -1,6 +1,11 @@
-'DevHero:BannerRwd':
-  superTypes:
-    'Neos.NodeTypes:Page': true
+'DevHero.BannerRwd:BannerRwd':
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': false
+          'Neos.NodeTypes:Text': true
   ui:
     label: Banner RWD
     group: plugins
