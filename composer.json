@@ -1,0 +1,24 @@
+{
+  "description": "Neos.io news package with tag and many containers support",
+  "type": "neos-package",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Dawid Wyrkowski",
+      "email": "dawid@devhero.tech",
+      "homepage": "http://www.devhero.pl",
+      "role": "Developer"
+    }
+  ],
+  "name": "devhero/banner",
+  "autoload": {
+    "psr-0": {
+      "DevHero\\BannerRwd": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "DevHero.BannerRwd"
+    }
+  }
+}

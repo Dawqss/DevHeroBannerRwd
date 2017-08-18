@@ -1,0 +1,182 @@
+'DevHero:News':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    label: Artykuł
+    group: plugins
+    icon: icon-newspaper-o
+    inlineEditable: true
+    position: 1
+    inspector:
+      tabs:
+        rwd:
+          label: RWD
+          icon: 'icon-image'
+          position: 2
+      groups:
+        rwd:
+          label: Responsywne Obrazy
+          icon: 'icon-image'
+          tab: rwd
+  properties:
+    title:
+      inlineEditable: true
+      type: string
+      ui:
+        label: Tytuł artykułu
+        reloadIfChanged: true
+        inspector:
+          group: news
+    publicatedAt:
+      type: DateTime
+      ui:
+        label: Opublikowano
+        inspector:
+          editorOptions:
+            format: d-m-Y
+          group: news
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: true
+    endAt:
+      type: DateTime
+      ui:
+        label: Koniec publikacji
+        inspector:
+          editorOptions:
+            format: d-m-Y
+          group: news
+    tags:
+      type: references
+      ui:
+        label: Kategoria
+        reloadIfChanged: true
+        inspector:
+          group: news
+          editorOptions:
+            nodeTypes:
+              - 'DevHero.News:Tag'
+    author:
+      type: reference
+      ui:
+        label: Autor
+        reloadIfChanged: true
+        inspector:
+          group: author
+          editorOptions:
+            nodeTypes:
+              - 'DevHero.News:Author'
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Foto do listy aktualności
+        reloadIfChanged: true
+        inspector:
+          group: home
+          position: 2
+      editorOptions:
+        features:
+          crop: TRUE
+        crop:
+          aspectRatio:
+            locked:
+              width: 4
+              height: 3
+    imageAlt:
+      type: string
+      ui:
+        label: Alt tag do SEO
+        inspector:
+          group: home
+          position: 3
+#    description:
+#      type: string
+#      ui:
+#        label: Opis skrócony
+#        inspector:
+#          group: news
+#          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
+#          editorOptions:
+#            placeholder: opis skrócony
+    homepageBanner:
+      type: boolean
+      ui:
+        label: Pokazywać jako slajd na stronie głównej?
+        reloadIfChanged: true
+        inspector:
+          group: banner
+          position: 1
+    imageBanner:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Foto
+        reloadIfChanged: true
+        inspector:
+          group: banner
+          position: 2
+      editorOptions:
+        features:
+          crop: TRUE
+        crop:
+          aspectRatio:
+            locked:
+              width: 4
+              height: 3
+    imageAltBanner:
+      type: string
+      ui:
+        label: Alt tag do SEO
+        inspector:
+          group: banner
+          position: 3
+    descriptionBanner:
+      type: string
+      ui:
+        label: Nagłówek slajdu
+        inspector:
+          group: news
+          position: end
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
+          editorOptions:
+            placeholder: opis
+#    counter:
+#      type: integer
+#      defaultValue: 0
+#      ui:
+#        label: 'Ilość'
+#        inspector:
+#          group: month
+#          position: 1
+    turnOnRwd:
+      type: boolean
+      ui:
+        label: Włącz responywność
+        inspector:
+          group: rwd
+    imageL:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        reloadIfChanged: true
+        label: > 1350px
+        inspector:
+          group: rwd
+    imageM:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        reloadIfChanged: true
+        label: > 1024px && 1349px <
+        inspector:
+          group: rwd
+    imageS:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        reloadIfChanged: true
+        label: > 768px && 1023px <
+        inspector:
+          group: rwd
+    imageXS:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        reloadIfChanged: true
+        label: 767px <
+        inspector:
+          group: rwd
