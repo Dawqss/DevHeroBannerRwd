@@ -16,6 +16,7 @@
       "DevHero\\BannerRwd": "Classes/"
     }
   },
+  "minimum-stability": "dev",
   "extra": {
     "neos": {
       "package-key": "DevHero.BannerRwd"
