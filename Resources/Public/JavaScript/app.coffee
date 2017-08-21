@@ -2,7 +2,8 @@ APP = undefined
 APP = {}
 
 APP.rwdBackground = ->
-  el = $('.js-rwd-bg')
+  el = $('body').find('.js-rwd-bg')
+
   sizes = ['xs', 's', 'm', 'l']
   sizesPoints = [
     {min: 0, max: 767},
@@ -14,10 +15,11 @@ APP.rwdBackground = ->
   iterateElements = ->
     windowWidth = $(window).width()
     $.each el, (index) ->
-      console.log(el[index])
-      backgroundsRaw = el[index].attr('sizes')
+      currentElement = el[index]
+      console.log(currentElement)
+      backgroundsRaw = $(currentElement).attr('sizes')
       backgrounds = $.parseJSON(backgroundsRaw)
-      changeRwd(windowWidth, backgrounds, el[index])
+      changeRwd(windowWidth, backgrounds, $(currentElement))
 
 
 
@@ -35,9 +37,6 @@ APP.rwdBackground = ->
 
 
   iterateElements()
-
-  $(window).resize ->
-    iterateElements()
 
 
 APP.init = ->
