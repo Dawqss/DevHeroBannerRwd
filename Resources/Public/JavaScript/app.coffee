@@ -38,6 +38,9 @@ APP.rwdBackground = ->
 
   iterateElements()
 
+  $(window).resize ->
+    iterateElements()
+
 
 APP.init = ->
   APP.rwdBackground()
