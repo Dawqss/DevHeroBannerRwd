@@ -16,7 +16,6 @@ APP.rwdBackground = ->
     windowWidth = $(window).width()
     $.each el, (index) ->
       currentElement = el[index]
-      console.log(currentElement)
       backgroundsRaw = $(currentElement).attr('sizes')
       backgrounds = $.parseJSON(backgroundsRaw)
       changeRwd(windowWidth, backgrounds, $(currentElement))
