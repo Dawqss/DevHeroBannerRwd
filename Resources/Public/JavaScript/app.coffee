@@ -10,11 +10,18 @@ APP.rwdBackground = ->
     {min: 1024, max: 1349},
     {min: 1350, max: null}
   ]
-  backgroundsRaw = $('.js-rwd-bg').attr('sizes')
-  backgrounds = $.parseJSON(backgroundsRaw)
-  windowWidth = $(window).width()
 
-  changeRwd = (windowWidth) ->
+  iterateElements = ->
+    windowWidth = $(window).width()
+    $.each el, (index) ->
+      console.log(el[index])
+      backgroundsRaw = el[index].attr('sizes')
+      backgrounds = $.parseJSON(backgroundsRaw)
+      changeRwd(windowWidth, backgrounds, el[index])
+
+
+
+  changeRwd = (windowWidth, backgrounds, el) ->
     $.each sizesPoints, (key, value) ->
       if backgrounds[sizes[key]] != ''
         if value.max == null
@@ -26,16 +33,15 @@ APP.rwdBackground = ->
           if windowWidth >= value.min && windowWidth < value.max
             el.css("background", "url(" + backgrounds[sizes[key]] + ")");
 
-  changeRwd(windowWidth)
+
+  iterateElements()
 
   $(window).resize ->
-    windowWidth = $(window).width()
-    changeRwd(windowWidth)
-
+    iterateElements()
 
 
 APP.init = ->
-  App.rwdBackground()
+  APP.rwdBackground()
 
 $(document).ready ->
   APP.init()
