@@ -34,7 +34,7 @@ APP.rwdBackground = ->
 
 
 
-APP.init ->
+APP.init = ->
   App.rwdBackground()
 
 $(document).ready ->

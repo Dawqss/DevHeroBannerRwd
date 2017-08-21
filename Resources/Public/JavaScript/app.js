@@ -52,9 +52,9 @@
     });
   };
 
-  APP.init(function() {
+  APP.init = function() {
     return App.rwdBackground();
-  });
+  };
 
   $(document).ready(function() {
     APP.init();
